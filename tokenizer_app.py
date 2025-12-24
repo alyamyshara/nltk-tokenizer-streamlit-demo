@@ -2,6 +2,10 @@ import streamlit as st
 import nltk
 from nltk.tokenize import sent_tokenize, word_tokenize, WordPunctTokenizer
 
+# Download required NLTK resources
+nltk.download("punkt", quiet=True)
+nltk.download("punkt_tab", quiet=True)
+
 # Make sure punkt is available
 nltk.download("punkt", quiet=True)
 
@@ -44,3 +48,4 @@ if st.button("Run tokenizers"):
             st.subheader("WordPunct tokenizer")
             wp_tokens = WordPunctTokenizer().tokenize(text)
             st.write(wp_tokens)
+
